@@ -1,0 +1,19 @@
+Добавление учеток centos 8+
+sudo useradd -G wheel USER
+sudo passwd USER
+
+В группу квм
+sudo useradd -G wheel,libvirt,qemu,kvm -p USER
+
+Отправить открытый ключ сертификата ssh
+ssh-copy-id USER@SERVER
+
+Открыть порт 
+sudo firewall-cmd --zone=public --add-port=10050/tcp --permanent;
+sudo firewall-cmd --reload;
+
+mysql создать пользователя + базу и дать на базу права 
+create database BD character set utf8mb4 collate utf8mb4_bin;
+create user USER@localhost identified by 'PASSWORD';
+grant all privileges on BD.* to USER@localhost;
+
