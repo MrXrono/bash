@@ -17,3 +17,5 @@ create database BD character set utf8mb4 collate utf8mb4_bin;
 create user USER@localhost identified by 'PASSWORD';
 grant all privileges on BD.* to USER@localhost;
 
+Выдать права для пользователя 
+sudo chown qemu.qemu files
